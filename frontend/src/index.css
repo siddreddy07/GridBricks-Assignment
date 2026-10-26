@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* design tokens – cool "North Sea" palette, one font family, no gradients */
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: #edf0ee;
+  --color-surface: #ffffff;
+  --color-ink: #14212b;
+  --color-muted: #5b6b75;
+  --color-rule: #cbd3d6;
+  --color-accent: #0f6e8c;
+  --color-over: #a8432a; /* forecast above actual */
+  --color-under: #3f6e4e; /* forecast below actual */
+}
+
+body {
+  @apply bg-page text-ink font-sans antialiased;
+  font-variant-numeric: tabular-nums; /* numbers line up in tables */
+}
+
+/* condensed width of Archivo, used for headlines */
+.condensed {
+  font-stretch: 75%;
+}
