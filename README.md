@@ -7,21 +7,31 @@ A web app for a UK energy utility's day-ahead trading team. It shows:
 
 Scope: national-level **wind** generation in **January 2026**, using **Elexon BMRS** data only.
 
-**Live app:** _coming soon (deployment in progress)_
+## Links
+
+| | Link |
+|---|---|
+| **Live app** | **[frontend-pi-bay-onxxxsesfm.vercel.app](https://frontend-pi-bay-onxxxsesfm.vercel.app/)** |
+| **Demo video** (client pitch + tech walkthrough) | **[Watch on Google Drive](https://drive.google.com/file/d/116Pebk5CyfNmptGKEUQeO-UBWxUNVy3n/view?usp=sharing)** |
+| Backend API | [backend-snowy-nine-50.vercel.app](https://backend-snowy-nine-50.vercel.app/) (interactive docs at [`/docs`](https://backend-snowy-nine-50.vercel.app/docs)) |
+
+> The backend runs as a serverless function, so the first request after it has been idle can take a few seconds while it loads the Elexon data.
 
 ---
 
 ## Contents
 
+- [Links](#links)
 - [How it works](#how-it-works)
 - [Tech stack](#tech-stack)
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
+- [Deployment (Vercel)](#deployment-vercel)
 - [Using the app](#using-the-app)
 - [API reference](#api-reference)
 - [Key findings (January 2026)](#key-findings-january-2026)
 - [Known limitations](#known-limitations)
-- [Use of AI tools](#use-of-ai-tools)
+- [Use of AI tools](#use-of-ai-tools-ai-assisted-development)
 
 ---
 
@@ -307,7 +317,7 @@ GET /api/analysis/forecast-vs-actual?start=2026-01-10T00:00:00Z&end=2026-01-10T2
 - `GET /api/forecasts/` returns all ~12k rows (no pagination).
 - CORS allows all origins (to be restricted to the deployed frontend URL).
 - The cause of the consistent positive bias has not been investigated (for example, differences in the wind capacity each dataset covers).
-- Deployment is in progress.
+- On Vercel, data is held per serverless instance and reloaded from Elexon after a cold start.
 
 ---
 
