@@ -12,8 +12,15 @@ Scope: national-level **wind** generation in **January 2026**, using **Elexon BM
 | | Link |
 |---|---|
 | **Live app** | **[frontend-pi-bay-onxxxsesfm.vercel.app](https://frontend-pi-bay-onxxxsesfm.vercel.app/)** |
-| **Demo video** (client pitch + tech walkthrough) | **[Watch on Google Drive](https://drive.google.com/file/d/116Pebk5CyfNmptGKEUQeO-UBWxUNVy3n/view?usp=sharing)** |
+| **Demo video** (YouTube, unlisted) | **[Watch on YouTube](https://www.youtube.com/watch?v=p-isiltR_4U)** · backup: [Google Drive](https://drive.google.com/file/d/116Pebk5CyfNmptGKEUQeO-UBWxUNVy3n/view?usp=sharing) |
 | Backend API | [backend-snowy-nine-50.vercel.app](https://backend-snowy-nine-50.vercel.app/) (interactive docs at [`/docs`](https://backend-snowy-nine-50.vercel.app/docs)) |
+
+**Video chapters**
+
+| Time | Part |
+|---|---|
+| [0:06](https://www.youtube.com/watch?v=p-isiltR_4U&t=6s) | Part 1 – Client demo |
+| [2:17](https://www.youtube.com/watch?v=p-isiltR_4U&t=137s) | Part 2 – Technical walkthrough |
 
 > The backend runs as a serverless function, so the first request after it has been idle can take a few seconds while it loads the Elexon data.
 
