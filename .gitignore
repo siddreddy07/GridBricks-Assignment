@@ -23,7 +23,9 @@ Thumbs.db
 # Claude Code local files
 .claude/
 
-# personal prep notes (kept local)
+# personal notes (kept local)
+Assignment.md
+Plan.md
 Interview Plan.md
 Video Guide.md
 Tech Lead Video Plan.md

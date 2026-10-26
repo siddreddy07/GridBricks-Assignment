@@ -78,8 +78,6 @@ For each target time **T** and a chosen lead time **H**, the app picks the forec
 ```
 .
 ├── README.md              # this file
-├── Assignment.md          # the original brief
-├── Plan.md                # phase-by-phase build plan with progress
 ├── docker-compose.yml     # runs backend + frontend together
 ├── .gitignore
 │
@@ -304,7 +302,7 @@ This project was built with AI-assisted development, using two AI coding assista
 
 | Tool | Used for |
 |---|---|
-| **Claude Code** (Anthropic) | Planning the backend and frontend structure (`Plan.md`); writing and reviewing backend and frontend code; exploring the Elexon API responses and checking the results; frontend design guidance (the `frontend-design` plugin); Docker setup; documentation (this README) |
+| **Claude Code** (Anthropic) | Planning the backend and frontend structure; writing and reviewing backend and frontend code; exploring the Elexon API responses and checking the results; frontend design guidance (the `frontend-design` plugin); Docker setup; documentation (this README) |
 | **OpenCode** | AI-assisted coding in the terminal: writing and refactoring code, debugging, and answering questions about the codebase during development |
 
 All AI-generated code was reviewed, run and tested locally against the real Elexon data before being committed.
