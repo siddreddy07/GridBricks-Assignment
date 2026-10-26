@@ -211,7 +211,7 @@ Both apps are deployed as two separate Vercel projects from this same repo.
 | Frontend | `frontend` | Framework preset: **Vite**. Env var `VITE_API_URL` = the backend URL. |
 
 How it works on Vercel:
-- **Backend:** `backend/api/index.py` exposes the FastAPI app as a serverless function, and `backend/vercel.json` routes every path to it. Serverless functions can start cold, so the Elexon data is also loaded on the first analysis request if it isn't loaded yet (`ensure_data_loaded`). The first request after a cold start takes a few seconds.
+- **Backend:** Vercel detects the FastAPI `app` in `backend/app/main.py` automatically (no extra config) and runs it as a serverless function. Functions can start cold, so besides the startup hook, the Elexon data is also loaded on the first analysis request if it isn't loaded yet (`ensure_data_loaded`). The first request after a cold start takes a few seconds.
 - **Frontend:** `frontend/vercel.json` sends every path to `index.html`, so React Router routes like `/accuracy` work on refresh.
 
 ---
