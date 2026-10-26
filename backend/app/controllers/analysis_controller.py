@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 
 from fastapi import HTTPException
 
+from app.controllers.sync_controller import ensure_data_loaded
 from app.services import analysis_service
 
 
@@ -17,4 +18,5 @@ def get_forecast_vs_actual(start: datetime | None, end: datetime | None, horizon
     end = to_utc(end)
     if start and end and start > end:
         raise HTTPException(status_code=400, detail="start must be before end")
+    ensure_data_loaded()
     return analysis_service.get_forecast_vs_actual(start, end, horizon)

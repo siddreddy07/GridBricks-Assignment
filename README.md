@@ -201,6 +201,21 @@ npm run preview    # serve the build locally
 
 ---
 
+## Deployment (Vercel)
+
+Both apps are deployed as two separate Vercel projects from this same repo.
+
+| Project | Root directory | Settings |
+|---|---|---|
+| Backend | `backend` | Framework preset: **Other**. Env var `FRONTEND_URL` = the frontend URL (restricts CORS). |
+| Frontend | `frontend` | Framework preset: **Vite**. Env var `VITE_API_URL` = the backend URL. |
+
+How it works on Vercel:
+- **Backend:** `backend/api/index.py` exposes the FastAPI app as a serverless function, and `backend/vercel.json` routes every path to it. Serverless functions can start cold, so the Elexon data is also loaded on the first analysis request if it isn't loaded yet (`ensure_data_loaded`). The first request after a cold start takes a few seconds.
+- **Frontend:** `frontend/vercel.json` sends every path to `index.html`, so React Router routes like `/accuracy` work on refresh.
+
+---
+
 ## Using the app
 
 ### Forecast page (`/forecast`)

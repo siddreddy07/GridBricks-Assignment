@@ -23,6 +23,9 @@ forecasts_db: dict[int, dict] = {
 # auto-increment ids (start after the demo data)
 counters = {"actual": len(actuals_db), "forecast": len(forecasts_db)}
 
+# becomes True once the real Elexon data replaced the demo data
+status = {"loaded_from_elexon": False}
+
 
 def next_id(name: str) -> int:
     counters[name] += 1

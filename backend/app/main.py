@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -24,10 +25,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Wind Forecast Monitor API", lifespan=lifespan)
 
 # allow the React app to call this API
-# TODO: replace "*" with the frontend URL once deployed
+# FRONTEND_URL is set in production (e.g. https://my-app.vercel.app), otherwise allow all
+frontend_url = os.getenv("FRONTEND_URL")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[frontend_url] if frontend_url else ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
